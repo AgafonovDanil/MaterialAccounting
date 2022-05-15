@@ -1,0 +1,54 @@
+﻿<Window x:Class="MaterialAccounting.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MaterialAccounting"
+        mc:Ignorable="d"
+        Title="MaterialAccounting" Height="700" Width="1080" Background="LightGray" WindowState="Maximized">
+    <Viewbox>
+        <Grid Height="874" Width="1471">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="731*"/>
+                <ColumnDefinition Width="740*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="125*"/>
+                <RowDefinition Height="749*"/>
+            </Grid.RowDefinitions>
+            <DataGrid AutoGenerateColumns="False" x:Name="dataStorageRecords" HorizontalAlignment="Left" Height="735" Margin="0,4,0,0" VerticalAlignment="Top" Width="718" Grid.Row="1" SelectionChanged="dataStorageRecords_SelectionChanged">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Название" Width="*" Binding="{Binding Name}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Количество" Width="100" Binding="{Binding Count}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Общая цена" Width="*" Binding="{Binding generalPrice}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Категория" Width="*" Binding="{Binding Category}"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <DataGrid AutoGenerateColumns="False" x:Name="dataStorage" HorizontalAlignment="Left" Height="824" Margin="4,1,0,0" VerticalAlignment="Top" Width="727" Grid.RowSpan="2" Grid.Column="1" SelectionChanged="dataStorage_SelectionChanged" MouseDoubleClick="dataStorage_MouseDoubleClick">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Название" Width="100" Binding="{Binding Name}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Инвентарный №" Width="120" Binding="{Binding InventoryNumber}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Дата поступления" Width="110" Binding="{Binding DateReceive}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Дата перемещения" Width="120" Binding="{Binding DateMoving}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Гарантия" Width="70" Binding="{Binding Garanty}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Цена" Width="100" Binding="{Binding Price}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="№ мастерской" Width="*" Binding="{Binding WorkshopNumber}"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <ComboBox x:Name="cbWorkshop" HorizontalAlignment="Left" VerticalAlignment="Top" Width="154" Margin="0,27,0,0" Height="22"/>
+            <ComboBox x:Name="Category" HorizontalAlignment="Left" Margin="0,95,0,0" VerticalAlignment="Top" Width="154" Height="22"/>
+            <Button x:Name="btnSave" Content="Сохранить" HorizontalAlignment="Left" Margin="3,705,0,0" VerticalAlignment="Top" Width="648" Height="34" Grid.Row="1" Grid.Column="1" Click="btnSave_Click"/>
+            <Label Content="Выберите мастерскую:" FontSize="13" HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" Width="166"/>
+            <Label Content="Выберите категорию &#xD;&#xA;оснащения:" FontSize="13" HorizontalAlignment="Left" VerticalAlignment="Top" Height="46" Width="166" Margin="0,49,0,0" AllowDrop="True"/>
+            <Button x:Name="btnAdd" Content="Добавить" HorizontalAlignment="Left" Margin="159,27,0,0" VerticalAlignment="Top" Width="119" Height="42" Click="btnAdd_Click"/>
+            <Button x:Name="btnDelete" Content="Удалить" HorizontalAlignment="Left" Margin="159,79,0,0" VerticalAlignment="Top" Width="119" Height="38"/>
+            <Button x:Name="btnMoving" Content="Переместить" HorizontalAlignment="Left" Margin="295,27,0,0" VerticalAlignment="Top" Width="119" Height="42"/>
+            <Button x:Name="btnChanged" Content="Изменить" HorizontalAlignment="Left" Margin="295,79,0,0" VerticalAlignment="Top" Width="119" Height="38" Click="btnChanged_Click"/>
+            <TextBox x:Name="tbSearch" HorizontalAlignment="Left" Height="36" Margin="462,29,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
+            <Button x:Name="btnActs" Content="Акты" HorizontalAlignment="Left" Margin="462,75,0,0" VerticalAlignment="Top" Width="256" Height="38"/>
+            <Image Source="png\Print.png" HorizontalAlignment="Left" Height="33" Margin="422,80,0,0" VerticalAlignment="Top" Width="40"/>
+            <Image Source="png\search.png" HorizontalAlignment="Left" Height="27" Margin="424,32,0,0" VerticalAlignment="Top" Width="28"/>
+
+        </Grid>
+    </Viewbox>
+</Window>

@@ -1,0 +1,18 @@
+﻿<Window x:Class="MaterialAccounting.Autorization"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MaterialAccounting"
+        mc:Ignorable="d"
+        Title="Autorization" Height="360" Width="570.5" WindowStartupLocation="CenterScreen" Background="LightGray">
+    <Grid>
+        <Button x:Name="btnOpen" Content="Войти" HorizontalAlignment="Left" Margin="206,236,0,0" VerticalAlignment="Top" Width="166" Height="48" Click="btnOpen_Click"/>
+        <TextBox x:Name="tbLogin" HorizontalAlignment="Left" Height="38" Margin="166,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256"/>
+        <TextBox x:Name="tbPassword" HorizontalAlignment="Left" Height="38" Margin="166,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256"/>
+        <Label Content="Введите логин:" HorizontalAlignment="Left" Margin="166,70,0,0" VerticalAlignment="Top" Width="130"/>
+        <Label Content="Введите пароль:" HorizontalAlignment="Left" Margin="166,144,0,0" VerticalAlignment="Top" Width="130"/>
+        <Label Content="Авторизация пользователя" FontSize="18" HorizontalAlignment="Left" Margin="174,10,0,0" VerticalAlignment="Top" Height="43" Width="240"/>
+
+    </Grid>
+</Window>
