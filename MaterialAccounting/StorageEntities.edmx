@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище StorageModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище StorageModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Storage">
           <Key>
             <PropertyRef Name="id" />
@@ -12,12 +12,14 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="50" />
           <Property Name="InventoryNumber" Type="varchar(max)" />
-          <Property Name="DateReceive" Type="date" />
-          <Property Name="DateMoving" Type="date" />
+          <Property Name="DateReceive" Type="datetime" />
+          <Property Name="DateMoving" Type="datetime" />
           <Property Name="Garanty" Type="varchar" MaxLength="50" />
           <Property Name="Price" Type="varchar(max)" />
           <Property Name="WorkshopNumber" Type="varchar" MaxLength="50" />
           <Property Name="status" Type="bit" Nullable="false" />
+          <Property Name="DateDeletion" Type="datetime" />
+          <Property Name="editingWorkshop" Type="bit" />
         </EntityType>
         <EntityType Name="StorageRecords">
           <Key>
@@ -45,8 +47,7 @@
           <EntitySet Name="StorageRecords" EntityType="Self.StorageRecords" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="StorageModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -57,12 +58,14 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="InventoryNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="DateReceive" Type="DateTime" Precision="0" />
-          <Property Name="DateMoving" Type="DateTime" Precision="0" />
+          <Property Name="DateReceive" Type="DateTime" Precision="3" />
+          <Property Name="DateMoving" Type="DateTime" Precision="3" />
           <Property Name="Garanty" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Price" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="WorkshopNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="status" Type="Boolean" Nullable="false" />
+          <Property Name="DateDeletion" Type="DateTime" Precision="3" />
+          <Property Name="editingWorkshop" Type="Boolean" />
         </EntityType>
         <EntityType Name="StorageRecords">
           <Key>
@@ -99,6 +102,8 @@
           <EntitySetMapping Name="Storage">
             <EntityTypeMapping TypeName="StorageModel.Storage">
               <MappingFragment StoreEntitySet="Storage">
+                <ScalarProperty Name="editingWorkshop" ColumnName="editingWorkshop" />
+                <ScalarProperty Name="DateDeletion" ColumnName="DateDeletion" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="InventoryNumber" ColumnName="InventoryNumber" />

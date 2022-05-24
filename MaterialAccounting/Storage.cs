@@ -23,5 +23,7 @@ namespace MaterialAccounting
         public string Price { get; set; }
         public string WorkshopNumber { get; set; }
         public bool status { get; set; }
+        public Nullable<System.DateTime> DateDeletion { get; set; }
+        public Nullable<bool> editingWorkshop { get; set; }
     }
 }

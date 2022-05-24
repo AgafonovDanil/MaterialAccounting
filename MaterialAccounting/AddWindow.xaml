@@ -24,7 +24,7 @@
         <Label Content="Введите категорию &#xA;оснащения:" HorizontalAlignment="Left" Margin="10,1,0,0" VerticalAlignment="Top" Width="191" Height="45" AllowDrop="True" Grid.Row="2"/>
         <TextBox x:Name="tbCategoryAdd" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="345" TextChanged="tbNameAdd_TextChanged" Grid.Row="2"/>
         <Button x:Name="btnSave" Content="Сохранить" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="3" VerticalAlignment="Top" Width="345" Height="28" Click="btnSave_Click"/>
-        <Button x:Name="btnBack" Content="Вернуться" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="3" VerticalAlignment="Top" Width="201" Height="28"/>
+        <Button x:Name="btnBack" Content="Вернуться" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="3" VerticalAlignment="Top" Width="191" Height="28" Click="btnBack_Click"/>
 
     </Grid>
 </Window>

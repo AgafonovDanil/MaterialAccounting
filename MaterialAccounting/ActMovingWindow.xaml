@@ -1,0 +1,32 @@
+﻿<Window x:Class="MaterialAccounting.ActMovingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MaterialAccounting"
+        mc:Ignorable="d"
+        Title="Акт перемещения" Height="350" Width="700" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="537*"/>
+            <ColumnDefinition Width="155*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="dataActMoving" HorizontalAlignment="Left" Height="309" VerticalAlignment="Top" Width="537" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название" Width="110"  Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Инвентарный №" Width="130" Binding="{Binding InventoryNumber}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Цена" Width="80" Binding="{Binding Price}"></DataGridTextColumn>
+                <DataGridTextColumn Header="№ Мастерской" Width="95" Binding="{Binding WorkshopNumber}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Дата перемещения" Width="120" Binding="{Binding DateMoving, StringFormat=\{0:dd.MM.yy \}}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox x:Name="tbInventoryMoving" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5,74,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="144"/>
+        <Label Content="Введите инвентарный №:" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Margin="0,43,0,0" Height="26"/>
+        <Button x:Name="btnActMoving" Content="Переместить" Grid.Column="1" HorizontalAlignment="Left" Margin="5,238,0,0" VerticalAlignment="Top" Width="144" Height="25" Click="btnActMoving_Click" />
+        <Button x:Name="btnAddActMoving" Content="Внести" HorizontalAlignment="Left" Margin="5,102,0,0" VerticalAlignment="Top" Width="144" Height="26" Click="btnAddActMoving_Click" Grid.Column="1" />
+        <Button x:Name="btnCloseActMoving" Content="Выйти" Grid.Column="1" HorizontalAlignment="Left" Margin="5,284,0,0" VerticalAlignment="Top" Width="144" Height="25" Click="btnCloseActMoving_Click" />
+        <Image Source="png\Print.png" Grid.Column="1" HorizontalAlignment="Left" Height="32" Margin="119,5,-4,0" VerticalAlignment="Top" Width="40"/>
+        <TextBox x:Name="tbWorkshopNumber" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5,204,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="144"/>
+        <Label Content="Введите мастерскую, в &#xD;&#xA;которую необходимо &#xD;&#xA;переместить:" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Margin="0,133,0,0" Height="66"/>
+    </Grid>
+</Window>

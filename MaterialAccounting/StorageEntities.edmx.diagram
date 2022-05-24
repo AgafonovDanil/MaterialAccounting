@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="5c09642188b042538604e61c32c296cc" Name="Diagram1">
-        <EntityTypeShape EntityType="StorageModel.Storage" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="StorageModel.Storage" Width="1.625" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="StorageModel.StorageRecords" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="StorageModel.Users" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
       </Diagram>

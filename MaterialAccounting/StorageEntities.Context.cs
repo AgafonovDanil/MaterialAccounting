@@ -12,7 +12,7 @@ namespace MaterialAccounting
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    
+
     public partial class StorageEntities : DbContext
     {
         private static StorageEntities _context;
@@ -29,12 +29,12 @@ namespace MaterialAccounting
             : base("name=StorageEntities")
         {
         }
-    
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
-    
+
         public virtual DbSet<Storage> Storage { get; set; }
         public virtual DbSet<StorageRecords> StorageRecords { get; set; }
         public virtual DbSet<Users> Users { get; set; }
